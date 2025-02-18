@@ -3,27 +3,19 @@ Clase 16 - Variables
 Vídeo: https://youtu.be/1glVfFxj8a4?t=3049
 */
 
-// var
+//Let
+let myMame =  'hola Daniel';
+console.log(myMame);
+let greetings = 'Hellow ';
 
-var helloWorld = "¡Hola, JavaScript!"
-console.log(helloWorld)
+myMame = 'hola nuevamente Bella';
+console.log(myMame);
+let message = greetings + myMame;
+console.log(message);
 
-helloWorld = "¡Hola de nuevo, JavaScript!"
-console.log(helloWorld)
+// CONST
 
-// let
-
-let helloWorld2 = "¡Hola, JavaScript 2!"
-console.log(helloWorld2)
-
-helloWorld2 = "¡Hola de nuevo, JavaScript 2!"
-console.log(helloWorld2)
-
-// const
-
-const helloWorld3 = "¡Hola, JavaScript 3!"
-console.log(helloWorld3)
-
-// Error
-// helloWorld3 = "¡Hola de nuevo, JavaScript 2!"
-// console.log(helloWorld3)
+const birthDay = '20/07/88';
+console.log(birthDay)
+let mybirthDay = 'Mi cumpleaños es ';
+console.log(mybirthDay + birthDay);

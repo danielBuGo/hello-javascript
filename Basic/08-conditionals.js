@@ -6,65 +6,70 @@ Vídeo: https://youtu.be/1glVfFxj8a4?t=7277
 // if, else if, else
 
 // if (si)
+let age = 36
 
-let age = 37
-
-if (age == 37) {
-    console.log("La edad es 37")
+if (age == 36){
+    console.log(`La edad es ${age}`)
 }
 
-// else (si no)
-
-if (age == 37) {
-    console.log("La edad es 37")
+// else if (si no)
+if (age == 36){
+    console.log(`La edad es ${age}`)
 } else {
-    console.log("La edad no es 37")
+    console.log('La edad es diferente a 37')
 }
 
 // else if (si no, si)
-
-if (age == 37) {
-    console.log("La edad es 37")
-} else if (age < 18) {
-    console.log("Es menor de edad")
+if (age == 36){
+    console.log(`La edad es ${age}`)
+} else if (age <= 18){
+    console.log('el usuario es menor de edad')
 } else {
-    console.log("La edad no es 37 ni es menor de edad")
+    console.log('LA edad es diferente a 18 y 37')
 }
 
 // Operador ternario
+const theMessage = age == 36 ? "La edad es 36" : "La edad es diferente a 36" //Se ingresa la condicion antes del ?
+console.log(theMessage)
+let myAge = 18
+const theMes = myAge >= 18 ? "Is over age" : "is under age "
+console.log(theMes)
+let yourGlider = "C"
+const pilotLevel = yourGlider == 'C' ? "You are an expert pilot" : "You are not in expert level"
+console.log(pilotLevel)
+let brandGlider ='ozone'
+let yourBrand = brandGlider == "advance" ? "your brannd is advance" : "your brand is ozone"
+console.log(yourBrand)
 
-const message = age == 37 ? "La edad es 37" : "La edad no es 37"
-console.log(message)
-
-// switch
-
-let day = 3
+//Switch: Compara varios eventos con una sola variable
+let day = 7
 let dayName
 
-switch (day) {
+switch(day){
     case 0:
-        dayName = "Lunes"
+        dayName = 'Monday'
         break
     case 1:
-        dayName = "Martes"
+        dayName = 'Tuesday'
         break
     case 2:
-        dayName = "Miércoles"
+        dayName = 'Wednesday'
         break
     case 3:
-        dayName = "Jueves"
+        dayName = 'Thursday'
         break
     case 4:
-        dayName = "Viernes"
+        dayName = 'Friday'
         break
     case 5:
-        dayName = "Sábado"
+        dayName = 'Saturday'
         break
     case 6:
-        dayName = "Domingo"
+        dayName = 'Sunday'
         break
     default:
-        dayName = "Número de día incorrecto"
-}
+        dayName = 'Introduce a correct value'                        
 
+}
 console.log(dayName)
+

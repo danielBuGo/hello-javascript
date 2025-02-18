@@ -5,51 +5,49 @@ Vídeo: https://youtu.be/1glVfFxj8a4?t=3599
 
 // Tipos de datos primitivos
 
-// Cadenas de texto (string)
-let myName = "Brais Moure"
-let alias = 'MoureDev'
-let email = `braismoure@mouredev.com`
+// Stings
+let sport = 'Paragliding ';
+let favoriteBrand = 'Ozone';
+let level = 'EN C'
+console.log(sport + favoriteBrand );
 
-// Números (number)
-let age = 37 // Entero
-let height = 1.77 // Decimal
+// Numbers
+let age = 36;
+let hight = 1.70;
+let weigth = 73.5;
+console.log(age)
 
-// Booleanos (boolean)
-let isTeacher = true
-let isStudent = false
+//Boolean
+let heIsInstructor = false;
+let heIsPilot = true;
+console.log(heIsPilot);
 
 // Undefined
-let undefinedValue
-console.log(undefinedValue)
+let undifinedValue 
+console.log(undifinedValue);
 
-// Null
-let nullValue = null
+//Null
+let nullData = null;
+console.log(nullData);
+
+//BigInt
+
+let myBigInt = BigInt(72348975928437957297547928753278279075489237854);
+console.log(myBigInt);
+let myBigInt2 = 273472789589247895789275982734895732897543289787328n;
+console.log(myBigInt2);
 
 // Symbol
 
-let mySymbol = Symbol("mysymbol")
+let mySymbol = Symbol("mySymbol"); //estos simbolos son utiles como identificadores de propiedades ( objetos), mas adelante se ve.
 
-// BigInt
+console.log(typeof sport);
+console.log(typeof age);
+console.log(typeof heIsInstructor);
+console.log(typeof myBigInt);
+console.log(typeof mySymbol);
+console.log(typeof undifinedValue);
+console.log(typeof nullData);
 
-let myBigInt = BigInt(817239871289371986589716389471628379612983761289376129)
-let myBigInt2 = 817239871289371986589716389471628379612983761289376129n
 
-// Mostramos los tipos de datos
-console.log(typeof myName)
-console.log(typeof alias)
-console.log(typeof email)
 
-console.log(typeof age)
-console.log(typeof height)
-
-console.log(typeof isTeacher)
-console.log(typeof isStudent)
-
-console.log(typeof undefinedValue)
-
-console.log(typeof nullValue)
-
-console.log(typeof mySymbol)
-
-console.log(typeof myBigInt)
-console.log(typeof myBigInt2)

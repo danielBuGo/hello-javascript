@@ -5,105 +5,87 @@ Vídeo: https://youtu.be/1glVfFxj8a4?t=4937
 
 // Operadores Aritméticos
 
-let a = 5
-let b = 10
+let a = 8
+let b = 5
 
-console.log(a + b) // Suma
-console.log(a - b) // Resta
-console.log(a * b) // Multiplicación
-console.log(a / b) // División
-
-console.log(a % b) // Módulo
-console.log(a ** b) // Exponente
-
-a++ // Incremento
+console.log(a + b); //suma
+console.log(a - b); // resta
+console.log(a * b); // Multiplicacion
+console.log(a / b); // division
+console.log(a % b); // Mudulo
+console.log(a ** b); // Exponensial
+a++  //incremento
 console.log(a)
-
-b-- // Decremento
+b-- //Decremento
 console.log(b)
 
-// Operadores de asignacion
-
-let myVariable = 2
+// Operdadores de asignacion
+console.log('Operadores de Asignacion')
+let myVariable = 2 // El signo igual es el operador de asignacion
+myVariable += 2 // Es lo mismo que myVariable = myVariable + 2
 console.log(myVariable)
-myVariable += 2 // Suma con asignación
+myVariable -= 3
+console.log(myVariable)
+myVariable *= 5
+console.log(myVariable)
+myVariable /= 2
+console.log(myVariable)
+myVariable %= 6
+console.log(myVariable)
+myVariable **= 4
 console.log(myVariable)
 
-myVariable -= 2 // Resta con asignación
-myVariable *= 2 // Multiplicación con asignación
-myVariable /= 2 // División con asignación
-myVariable %= 2 // Módulo con asignación
-myVariable **= 2 // Exponente con asignación
+//Operadoeres de comparacion
+console.log('Operadores de comparacion')
+console.log (a > b)
+console.log (a < b)
+console.log (a >= b)
+console.log (a <= b)
+console.log (a == b)
+console.log (a == 9)
+console.log (a == a) //igualdad por valor
+console.log (a === 9) // igualdad por identidad
+console.log (a === '9') // igualdad por identidad
+console.log (a != b) // Desigualdad
+console.log (a !== b) // Desigualdad
+console.log (1 == true) // Desigualdad
+console.log (0 == true) // Desigualdad
 
-// Operadores de comparación
+console.log(a)
 
-console.log(a > b) // Mayor que
-console.log(a < b) // Menor que
-console.log(a >= b) // Mayor o igual que
-console.log(a <= b) // Menor o igual que
-console.log(a == b) // Igualdad por valor
-console.log(a == 6)
-console.log(a == "6")
-console.log(a == a)
-console.log(a === a) // Igualdad por identidad (por tipo y valor) o igualdad estricta
-console.log(a === 6)
-console.log(a === "6")
-console.log(a != 6) // Desigualdad por valor
-console.log(a !== "6") // Desigualdad por identidad (por tipo y valor) o desigualdad estricta
-console.log(0 == false)
-console.log(1 == false)
-console.log(2 == false)
-console.log(0 == "")
-console.log(0 == " ")
-console.log(0 == '')
-console.log(0 == "Hola")
-console.log(0 === "")
-console.log(undefined == null)
-console.log(undefined === null)
+//Truly values
+//Todos los numeros positivos y negativos menos el cero
+//Todas las cadenas de texto menos las vacias
+// El booleano true
 
-/*
-Truthy values (valores verdaderos)
+//Falsy values
+//El cero
+//Null
+//undefined
+//NaN
+//0n
+//El boolean false
+//cadena de texto vacias
 
-- Todos los numeros positivos y negativos menos el cero
-- Todas las cadenas de texto menos las vacías
-- El boolean true
-*/
+//Operadores Logicos
+console.log('Operadores logicos')
 
-/*
-Falsy values (valores falsos)
+//Tenemos tres: And (&&) 
+console.log('operador And')
+console.log(5 > 10 && 5 < 20); //false
+console.log(5 < 10 && 5 < 20); // True. ambas condiciones deben ser verdaderas
 
-- 0
--  0n
-- null
-- undefined
-- NaN (Not a Number)
-- El boolean false
-- Cadenas de texto vacías 
-*/
+// or ||
+console.log('operador OR')
+console.log(2 < 4 || 5 < 10) // una de las dos condiciones debe ser verdadera para ser true
+console.log(2 < 4 && 10 < 20 || 5 < 10) // una de las dos condiciones debe ser verdadera para ser true
 
-// Operadores lógicos
+//not (!)
 
-// and (&&)
-console.log(5 > 10 && 15 > 20)
-console.log(5 < 10 && 15 < 20)
-console.log(5 < 10 && 15 > 20)
-console.log(5 > 10 && 15 > 20 && 30 > 40)
+console.log('Operador NOT (!)')
+console.log(!(2 < 4 || 5 < 10)) //NOt invierte el resultado del booleano, si era false, pasa a ser true
+console.log(!(2 < 4 && 10 < 20 || 5 < 10))
 
-// or (||)
-console.log(5 > 10 || 15 > 20)
-console.log(5 < 10 || 15 < 20)
-console.log(5 < 10 || 15 > 20)
-console.log(5 > 10 || 15 > 20 || 30 > 40)
-
-console.log(5 > 10 && 15 > 20 || 30 < 40)
-
-// not (!)
-console.log(!true)
-console.log(!false)
-console.log(!(5 > 10 && 15 > 20))
-console.log(!(5 > 10 || 15 > 20))
-
-// Operadores ternarios
-
+// Operadores ternarios 
 const isRaining = false
-isRaining ? console.log("Está lloviendo") : console.log("No está lloviendo")
+isRaining ? console.log("Esta lloviendo bebè") : console.log("Hoy podemos volar") 

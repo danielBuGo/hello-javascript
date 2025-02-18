@@ -7,42 +7,70 @@ Vídeo: https://youtu.be/1glVfFxj8a4?t=6565
 
 // Concatenación
 
-let myName = "Brais"
-let greeting = "Hola, " + myName + "!"
+let myName = 'Daniel'
+let greeting = 'Hola, ' + myName + ' !';
 console.log(greeting)
 console.log(typeof greeting)
 
-// Longitud
+//Longitud de mi string
 
 console.log(greeting.length)
 
-// Acceso a caracteres
+// Acceso a la caderna de texto
+console.log(greeting [0])
+console.log(greeting[2])
+console.log(greeting[13])
 
-console.log(greeting[0])
-console.log(greeting[11])
+//Metodos Comunes
+console.log(greeting.toUpperCase())// Pone el texto en mayusculas
+console.log(greeting.toLowerCase())// pone el texto en minuscuals
+console.log(greeting.indexOf('Daniel'))// imprime el indice donde encuentra la palabra daniel
+console.log(greeting.includes('Daniel'))// verivica si esta palabra esta en el string
+console.log(greeting.includes('andrea'))
+console.log(greeting.replace('Daniel', 'Andrea'))
 
-// Métodos comunes
+let yourName = 'Lina'
+let otherName = 'Daniel'
+let newMessage = `Hola ${yourName}, te quieres casar con ${otherName}`
+console.log(newMessage)
 
-console.log(greeting.toUpperCase()) // Mayúsculas
-console.log(greeting.toLowerCase()) // Minúsculas
-console.log(greeting.indexOf("Hola")) // Índice
-console.log(greeting.indexOf("Brais"))
-console.log(greeting.indexOf("MoureDev"))
-console.log(greeting.includes("Hola")) // Incluye
-console.log(greeting.includes("Brais"))
-console.log(greeting.includes("MoureDev"))
-console.log(greeting.slice(0, 10)) // Sección
-console.log(greeting.replace("Brais", "MoureDev")) // Reemplazo
+console.log(newMessage.toLocaleLowerCase())
+console.log(newMessage.toLocaleUpperCase())
+console.log(newMessage.indexOf('casar'))
+console.log(newMessage.includes('bella'))
+console.log(newMessage.includes('Lina'))
+console.log(newMessage.length)
+console.log(newMessage.replace('Lina', 'Yesenia'))
+console.log(newMessage)
+console.log(newMessage.slice(3, 10))// muestra las letras que hay entre el 3 y el 9 sin incluir el 10
 
-// Template literals (plantillas literales)
+let otherMessage = `${yourName} y ${otherName}, aman mucho a su perrita`
+console.log(otherMessage.length)
+console.log(otherMessage.slice(0, 20))
+console.log(otherMessage.indexOf ('perrita'))
+console.log(otherMessage.includes('bella'))
+console.log(otherMessage.replace('perrita','bella'))
+console.log(otherMessage)
+console.log(otherMessage.toLocaleUpperCase())
+console.log(otherMessage.includes(`daniel`)) 
+console.log(otherMessage.includes(`Daniel`))
 
-// Strings en varias líneas
-let message = `Hola, este
-es mi
-curso de
-JavaScript`
-console.log(message)
+let sport = 'Paragliding'
+let who = 'Daniel'
+let when = 'Weekends'
+let add = `${who}, loves ${sport} every${when}` //a este modo de concatenar strings se le llama interpolar
+console.log(add.slice(3, 11))
+console.log(add.length)
+console.log(add.toLocaleUpperCase())
+console.log(add.indexOf('Paragliding'))
+console.log(add.includes('Daniel'))
+console.log(add.includes('futbol'))
+console.log(add.replace('Paragliding', 'futbol'))// cambia la primera palabra, por la segunda
+console.log(add)
 
-// Interpolación de valores
-let email = "braismoure@mouredev.com"
-console.log(`Hola, ${myName}! Tu email es ${email}.`)
+//Templates literal
+let warning = `Hola
+puedo escribir Texto en  varias lineas` //Con las conmillas invertidas podemos escribir texto en varias lineas
+console.log(warning)
+
+
