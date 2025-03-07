@@ -56,6 +56,10 @@ let toUpper = function (string) {
    console.log(string.toUpperCase())
 }
 toUpper(words)
+console.log("+++Mismo ejercicio pero para minusculas+++")
+words = "GIVE IT LOWER"
+let toLower =  (string) => console.log(string.toLowerCase()) //pendiente por corregir
+toLower(words)
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 // 5. Crea una función que reciba un número y devuelva true si es primo, y false en caso contrario
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
