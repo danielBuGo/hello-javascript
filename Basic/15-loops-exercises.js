@@ -108,7 +108,13 @@ for (const char of string) {
 console.log(counter)
 
 console.log('6. Dado un array de números, usa un bucle para multiplicar todos los números y mostrar el producto')
+const theArray = [3, 6, 9, 12]
+let product = 1
 
+for (let i = 0; i < theArray.length; i++) {
+     product *= theArray[i];    
+}
+console.log(product)
 
 console.log('_______________________________________________________________________________________-')
 // Lo habia entendido mal e hice esto
@@ -120,11 +126,99 @@ for (let i = 0; i < myNumbers.length; i++){
     console.log(`${myNumbers[i]} * ${myNumbers[3]} = ` + myNumbers[i]*myNumbers[3])
     
 }
-// 7. Escribe un bucle que imprima la tabla de multiplicar del 5
+console.log("______________________________________________________________________")
+console.log("7. Escribe un bucle que imprima la tabla de multiplicar del 5")
+for (let i = 1; i  < 11; i++) {
+   console.log(`5 * ${i} = ` + (5 *  [i]))    
+}
+console.log("Tabla del 5 con bucle while")
+let result = 1; 
+while (result < 11) {
+    console.log((5*result))
+    result++
+}
+console.log("Tabla del 5 con bucle do while")
+let result2 = 1
+do {
+    console.log((5*result2))
+    result2++
+    
+} while (result2 < 11);
+console.log("________________________________________________________________________________-")
+
+console.log("8. Usa un bucle para invertir una cadena de texto")
+let text = "Quiero invertir esto"
+let newText =  ""
+for (let i = text.length -1; i >= 0; i--) {
+    newText += text[i]
+    
+}
+console.log(newText)
+console.log("________________________________________________________________________________________")
+console.log("Invirtiendo otra cadena de texto")
+let theText = "This will be inverted"
+let inverted = ""
+for (let i = theText.length-1; i >= 0; i--) {
+    inverted += theText[i]
+    
+}
+console.log(inverted)
+
+console.log("_____________________________________________________________________________________")
+console.log("9. Usa un bucle para generar los primeros 10 números de la secuencia de Fibonacci")
+let n = 10;
+let secuence = []
+if(n <= 0){
+    counter.log(secuence)
+} else if(n === 1){
+    console.log([0])
+} else{
+    secuence[0] = 0
+    secuence[1] = 1
+
+    for (let i = 2; i < n; i++) {
+        secuence[i] = secuence[i - 1] + secuence[i - 2]
+        
+    }
+    console.log(`Los primeros ${n} de la secuencia de Fegunacci son ${secuence}`)
+}
+console.log("___________________________________________________________________________________--")
 
 
-// 8. Usa un bucle para invertir una cadena de texto
+console.log("10. Dado un array de números, usa un bucle para crear un nuevo array que contenga solo los números mayores a 10")
+let lotOfNumbers = [4,8,12,16,20,24,28];
+let newBucle = [];
 
-// 9. Usa un bucle para generar los primeros 10 números de la secuencia de Fibonacci
+console.log(newBucle)
+for(i = 0; i < lotOfNumbers.length;i++){
+    if(lotOfNumbers[i] > 10){        
+        newBucle.push(lotOfNumbers[i])            
+    }   
+}
+console.log(newBucle)
+console.log("________________________________________________-")
+console.log("Realizar el mismo ejercicio anterior pero el nuevo array debe tener numeros > 20")
+let thisArray = [8, 16, 24, 32, 40, 48, 56]
+let theNewOne = []
+for (let i = 0; i < thisArray.length; i++) {
+    if(thisArray[i] > 20){
+        theNewOne.push(thisArray[i])
+    } 
+   
+}
+console.log(theNewOne)
+console.log("_______________________________________________________________________________________-")
+console.log("El mismo ejercicio pero menores que 30")
+let thisArray2 = [4, 8, 12, 16, 20, 24, 28, 32, 36, 40]
+let theNewOne2 = []
+for (let i = 0; i < thisArray2.length; i++) {
+    if(thisArray2[i] <= 30){
+        theNewOne2.push(thisArray2[i])
+    }
+    
+}
+console.log(theNewOne2)
 
-// 10. Dado un array de números, usa un bucle para crear un nuevo array que contenga solo los números mayores a 10
+
+
+
