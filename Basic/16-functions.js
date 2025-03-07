@@ -3,115 +3,114 @@ Clase 31 - Funciones
 Vídeo: https://youtu.be/1glVfFxj8a4?t=12829
 */
 
-// Funciones
-
+// Funciones: 
 // Simple
-
-function myFunc() {
-    console.log("¡Hola, función!")
+function myFunction (){
+    console.log("Hi my  first function ")
+}
+myFunction()
+for (let i = 1; i < 6; i++) {
+    myFunction()
+    
 }
 
-for (let i = 0; i < 5; i++) {
-    myFunc()
+console.log("Funcion con parametros")
+function withParams(name){
+    console.log(`Hello Mr ${name}`)
+
 }
+withParams("Anderson")
+console.log("______________________________________")
+let twoTimes = 2
+do {
+    withParams("Anderson")
+    twoTimes++
+} while (twoTimes <= 3);
 
-// Con parámetros
-
-function myFuncWithParams(name) {
-    console.log(`¡Hola, ${name}!`)
+console.log("_____________________________________________")
+console.log("Funciones anonimas")
+const anonyFunction = function(lastName){
+    console.log(`Hello Mr ${lastName}`)
 }
-
-myFuncWithParams("Brais")
-myFuncWithParams("MoureDev")
-
-// Funciones anónimas
-
-const myFunc2 = function (name) {
-    console.log(`¡Hola, ${name}!`)
+let threeTimes = 1
+while (threeTimes < 4) {
+   anonyFunction("Builes")
+    threeTimes++
+    
 }
+console.log("__________________________________________________")
 
-myFunc2("Brais Moure")
-
-// Arrow functions
-
-const myFunc3 = (name) => {
-    console.log(`¡Hola, ${name}!`)
+console.log("Arrow Functions")
+const age = (age) => {
+    console.log(`Daniel´s age is ${age} years old`)
 }
+age(36)
+const dogName = (dogName) => {
+    console.log(`My Dog´s name is ${dogName}`)
+}
+for(let i = 0;i < 6; i++){
+    dogName("Bella")
+}
+const country = (country) => console.log(`My favorite country is ${country}`)
 
-const myFunc4 = (name) => console.log(`¡Hola, ${name}!`)
+country("United States")
 
-myFunc3("Brais Moure")
-myFunc4("Brais Moure")
-
-// Parámetros
-
-function sum(a, b) {
+console.log("________________________________---")
+console.log("Functions with params")
+function add(a = 0, b = 0){
     console.log(a + b)
 }
+add(10, 20)
+add() // Si no pongo parametros la funcion me arroja NaN
+const product = (a = 0, b = 0) => console.log(a * b)
+product(5,11)
 
-sum(5, 10)
-sum(5)
-sum()
 
-function defaultSum(a = 0, b = 0) {
-    console.log(a + b)
-}
 
 // Por defecto
+product()
+product(5)
+product(5,4)
+product(8, 6)
 
-defaultSum()
-defaultSum(5)
-defaultSum(5, 10)
-defaultSum(b = 5)
 
-// Retorno de valores
-
-function mult(a, b) {
-    return a * b
+console.log("__________________-")
+console.log("Funcion con retorno")
+function resta(a=0, b=0) {
+    return a - b /** en ves de imprimirlo por consola
+    se lo retorno al usuario para que lo vea **/
 }
-
-let result = mult(5, 10)
+let result = resta(10,4)
 console.log(result)
+console.log("+++++++++++++++++++++++")
+console.log("Funciones anidadas")
 
-// Funciones anidadas
-
-function extern() {
-    console.log("Función externa")
-    function intern() {
-        console.log("Función interna")
+function externa(){
+    console.log("Esta es la externa")
+    function interna(){   
+        console.log("Esta es la interna")     
     }
-    intern()
+    interna() //Se debe ejecutar la interna dentro del scope de la externa
 }
-
-extern()
-// intern() Error: fuera del scope
-
-// Funciones de orden superior
-
-function applyFunc(func, param) {
-    func(param)
+externa()
+console.log("++++++++++++++++++++++")
+console.log("Funciones de orden superior")
+function bigFunction(func, param){
+    country(param)
 }
+bigFunction(country("Italy"))
+console.log("+++++++++++++++++++++++")
+console.log("For each")
+let hisArray = [3, 6, 9, 12]
+hisArray.forEach((i) => console.log(i) )
+console.log("+++ For Each con Map+++")
+let myMap = new Map([
+    ["name", "Daniel"],
+    ["Las Name", "Builes"]
 
-applyFunc(myFunc4, "función de orden superior")
-
-// forEach
-
-myArray = [1, 2, 3, 4]
-
-mySet = new Set(["Brais", "Moure", "mouredev", 37, true, "braismoure@mouredev.com"])
-
-myMap = new Map([
-    ["name", "Brais"],
-    ["email", "braismoure@mouredev.com"],
-    ["age", 37]
-])
-
-myArray.forEach(function (value) {
-    console.log(value)
-})
-
-myArray.forEach((value) => console.log(value))
-
+]
+);
+myMap.forEach((i) => console.log(i))
+console.log("+++ For Each con Set +++")
+let mySet = new Set ([5, 10, 15, 20])
 mySet.forEach((value) => console.log(value))
-
-myMap.forEach((value) => console.log(value))
