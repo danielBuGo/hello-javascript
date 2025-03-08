@@ -5,6 +5,20 @@ Vídeo: https://youtu.be/1glVfFxj8a4?t=14146
 
 // NOTA: Explora diferentes sintaxis de funciones para resolver los ejercicios
 
+console.log("Repaso de lo anterior Map, Set, Array")
+//Map
+let theMap = new Map ([
+    ["dog", true],
+    ["Male", false],
+    ["Age", 3]
+])
+console.log(theMap)
+let theSet = new Set ([
+    "Daniel",
+    "Luz",
+    "Andrea"
+])
+console.log(theSet)
 console.log("1. Crea una función que reciba dos números y devuelva su suma") 
 //Funcion simple:
 function add(a=0, b=0){
@@ -23,43 +37,35 @@ console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 console.log("2. Crea una función que reciba un array de números y devuelva el mayor de ellos")
 const numbers = [7,14,21,28]
-function theBigOne (array) {
-         
-    for (let i = 0; i < numbers.length; i++) {
-        let max = 0; 
-       
-       if(max > numbers[i]){
-       max = numbers[i]            
-       }
-       return max        
-    }
-}
-const data = theBigOne(numbers)
-console.log(data)
-theBigOne()
-console.log("++++++++++++++++++++++++++++++++++++++++++++++++++")
-/**function theChoosenOne (){
-    const numbers = [500, 6, 245, 76, 89]
-    let max = 0
-    for (const i of numbers) {
-        console.log(i)
-    } 
 
-}**/
+
+
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
-// 3. Crea una función que reciba un string y devuelva el número de vocales que contiene
+console.log("3. Crea una función que reciba un string y devuelva el número de vocales que contiene")
+let phrase = "ooeeiiaaeo"
+let vocals = "aeiouAEIOU"
+let counter = 0
+
+function letsCountVocals(string){
+    for (const value of string) {        
+        if(vocals.includes(value)){
+            counter++                      
+        }   
+         
+    }
+    console.log(counter)   
+}
+letsCountVocals(phrase)
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 console.log("4. Crea una función que reciba un array de strings y devuelva un nuevo array con las strings en mayúsculas")
-let words = "Give it back in Uppers"
-let toUpper = function (string) {
-   console.log(string.toUpperCase())
-}
-toUpper(words)
-console.log("+++Mismo ejercicio pero para minusculas+++")
-words = "GIVE IT LOWER"
-let toLower =  (string) => console.log(string.toLowerCase()) //pendiente por corregir
-toLower(words)
+let words = ["Give it back in Uppers", "Give back this one"]
+let toUpper = function (string){
+    for (const value of string) {
+        console.log(value.toLocaleUpperCase())        
+    }
+};
+toUpper(words);
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 // 5. Crea una función que reciba un número y devuelva true si es primo, y false en caso contrario
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
