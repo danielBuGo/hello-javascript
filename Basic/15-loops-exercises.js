@@ -203,8 +203,7 @@ let theNewOne = []
 for (let i = 0; i < thisArray.length; i++) {
     if(thisArray[i] > 20){
         theNewOne.push(thisArray[i])
-    } 
-   
+    }    
 }
 console.log(theNewOne)
 console.log("_______________________________________________________________________________________-")

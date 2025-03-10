@@ -22,23 +22,23 @@ console.log(theSet)
 console.log("1. Crea una función que reciba dos números y devuelva su suma") 
 //Funcion simple:
 function add(a=0, b=0){
-    console.log(a+b)
+    console.log(`${a} + ${b} = ` + (a+b))
 }
 add(10,10)
 //Funcion Anonima
 let anonymAdd = function (a=0, b=0){
-    console.log(a+b)
+    console.log(`La suma de ${a} y ${b} es ` + (a+b))
 }
 anonymAdd(5,8)
 //arrow function
-let arrowAdd = (a=0,b=0) => console.log(a+b)
+let arrowAdd = (a=0,b=0) => console.log(`${a} + ${b} = ` + (a+b))
 arrowAdd(8,8)
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
 console.log("2. Crea una función que reciba un array de números y devuelva el mayor de ellos")
 const numbers = [7,14,21,28]
 
-
+//PENDIENTE
 
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
@@ -54,26 +54,134 @@ function letsCountVocals(string){
         }   
          
     }
-    console.log(counter)   
-}
-letsCountVocals(phrase)
+    console.log("El número de vocales que contiene es: " + counter)  
+};
+letsCountVocals(phrase);
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 console.log("4. Crea una función que reciba un array de strings y devuelva un nuevo array con las strings en mayúsculas")
 let words = ["Give it back in Uppers", "Give back this one"]
 let toUpper = function (string){
     for (const value of string) {
-        console.log(value.toLocaleUpperCase())        
+        console.log(`Este es el array en minusculas: ${value}`)
+        console.log("Este es el array en mayusculas: " + value.toLocaleUpperCase())        
     }
 };
 toUpper(words);
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-// 5. Crea una función que reciba un número y devuelva true si es primo, y false en caso contrario
+console.log("5. Crea una función que reciba un número y devuelva true si es primo, y false en caso contrario")
+
+let isItPrime = function (number){
+   
+    if (number <= 1 ) {
+        console.log(`El número ${number} es primo?: ${false}`)
+        return;
+    } else if(number <= 3){
+        console.log(`El número ${number} es primo?: ${true}`)
+        return;
+    } else if(number % 2 === 0 || number % 3 === 0){
+        console.log(`El número ${number} es primo?: ${false}`)
+        return;
+    } else{
+        for (let i = 5; i * i <= number; i += 6) {
+            if (number % i === 0 || number % (i + 2) === 0) {
+                console.log(`El número ${number} es primo?: ${false}`)
+                return;
+            }
+          }
+          console.log(`El número ${number} es primo?: ${true}`)
+          return;
+    }       
+   
+}
+isItPrime(368)
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-// 6. Crea una función que reciba dos arrays y devuelva un nuevo array que contenga los elementos comunes entre ambos
+console.log("6. Crea una función que reciba dos arrays y devuelva un nuevo array que contenga los elementos comunes entre ambos")
+let pets1 = ["Dog", "Cat", "Horse", "Parrot"]
+let pets2 = ["Lion", "Tiger", "Cat", "Horse"]
+let commonAnimals = []
+let giveMeAnimalsInCommon2 = function(array1, array2){
+    let array3 = array1.concat(array2)    
+    let vistos = new Set ();
+    let duplicados = new Set();
+    let duplicateElements = array3.filter((element) =>{
+        if(vistos.has(element)){
+            duplicados.add(element)
+            return true;
+        }else {
+            vistos.add(element)
+            return false;
+        }
+    }) 
+    duplicateElements = Array.from(duplicados)
+    console.log(`Los elementos duplicados son: ${duplicateElements}`)
+}
+giveMeAnimalsInCommon2(pets1,pets2)
+/* Creé una funcion que pasa los valores de las arrays a un MAp
+y elimina los valores repetidos */
+let giveMeAnimalsInCommon = function (array1, array2){   
+    commonAnimals = array1.concat(array2)    
+    let commonAnimalsSet = new Set (commonAnimals)
+    let $commonAnimals = Array.from(commonAnimalsSet)
+    console.log(`Lista con los elementos repetidos eliminados: ${$commonAnimals}`)    
+}
+giveMeAnimalsInCommon(pets1, pets2)
+
+
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 // 7. Crea una función que reciba un array de números y devuelva la suma de todos los números pares
+let $numbers = [6, 7, 5, 4, 1, 0, 9, 10, 12, 24, 35, 77, 89]
+let isEven = []
+function addEvenNumbers(array){
+    let suma = 0
+    for (const even of array) {
+        if(even % 2 === 0){
+            isEven.push(even)           
+        }        
+    }
+    console.log(`The list of even numbers are: ${isEven}`)
+    for (const element of isEven) {
+            suma += element
+    }
+    console.log(`the result of it adds is : ${suma}`)
+};
+addEvenNumbers($numbers);
+$numbers = [5, 25, 15, 10, 4, 6]
+isEven = []
+let addEven = function(array){
+    let add = 0
+    array.forEach(element => {
+        if(element % 2 === 0){
+            isEven.push(element)            
+        }                
+    });
+    console.log(`Los números pares son: ${isEven}`)
+    for (const even of isEven) {
+        add += even        
+    }
+    console.log(`La suma de estos es: ${add}`)
+};
+addEven($numbers);
+console.log("__________________________________________________")
+$numbers = [2,7,4,5,9,10,10]
+isEven = []
+let addEven2 = function(array){
+    let suma = 0
+    array.forEach(element => {
+        if(element % 2 === 0){
+            isEven.push(element) 
+        }               
+    });
+    console.log(`The even elements are: ${isEven}`)
+    for (const even of isEven) {
+        suma += even
+    }
+    console.log(`the add of all items are: ${suma}`)
+}
+addEven2($numbers)
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 // 8. Crea una función que reciba un array de números y devuelva un nuevo array con cada número elevado al cuadrado
+$numbers = [2, 3, 5, 8]
+
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 // 9. Crea una función que reciba una cadena de texto y devuelva la misma cadena con las palabras en orden inverso
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
