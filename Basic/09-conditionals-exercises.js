@@ -133,7 +133,7 @@ let theSeasonIs
 
 switch(youMounth){
     case 1:
-        theSeasonIs = 'The season is Winter' @
+        theSeasonIs = 'The season is Winter' 
         break
     case 2:
         theSeasonIs = 'The season is Winter'
