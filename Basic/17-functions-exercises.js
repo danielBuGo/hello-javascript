@@ -36,9 +36,31 @@ arrowAdd(8,8)
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
 console.log("2. Crea una función que reciba un array de números y devuelva el mayor de ellos")
-const numbers = [7,14,21,28]
-
-//PENDIENTE
+const numbers = [7,14,700,21,28]
+let bigOne = numbers[0]
+function theBig (array){
+    for (let i = 1; i < array.length; i++){
+        if(array[i] > bigOne){
+            bigOne = array[i]
+        }
+        
+    }
+    console.log(`the biggest number is: ${bigOne}`)
+};
+theBig(numbers)
+console.log("________________________________________________-")
+//Lo haré  otra vez:
+const newNumbers = [1,45,7,10,3456,589]
+bigOne = newNumbers[0]
+let newBig = (array) => {
+    for (let i = 1; i < array.length;i++) {
+        if(array[i] > bigOne){
+            bigOne = array[i];
+        }        
+    }
+    console.log(`the biggest number is: ${bigOne}`)
+}
+newBig(newNumbers)
 
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
@@ -128,7 +150,7 @@ giveMeAnimalsInCommon(pets1, pets2)
 
 
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-// 7. Crea una función que reciba un array de números y devuelva la suma de todos los números pares
+console.log(" 7. Crea una función que reciba un array de números y devuelva la suma de todos los números pares")
 let $numbers = [6, 7, 5, 4, 1, 0, 9, 10, 12, 24, 35, 77, 89]
 let isEven = []
 function addEvenNumbers(array){
@@ -178,11 +200,78 @@ let addEven2 = function(array){
     console.log(`the add of all items are: ${suma}`)
 }
 addEven2($numbers)
+console.log("__________________________________")
+//Voy a sumar los impares
+$numbers = [2,4,5,7,9,12,14]
+let isOdd = []
+let addOddNumber = (array) => {
+    let add = 0
+    for (const element of array) {
+        if(element % 2 === 1){
+            console.log(`The add numbers are: ${element}`)
+            add += element
+        }
+        
+    }
+    
+    console.log(`The sumatory of odd numbers is: ${add}`)
+};
+addOddNumber($numbers);
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-// 8. Crea una función que reciba un array de números y devuelva un nuevo array con cada número elevado al cuadrado
+console.log("8. Crea una función que reciba un array de números y devuelva un nuevo array con cada número elevado al cuadrado")
 $numbers = [2, 3, 5, 8]
-
+let numberSqr = []
+let numbPow = function (array){
+    array.forEach(element => {
+        
+        let elevator = Math.pow(element, 2) // etambien funciona asi: element ** 2
+        numberSqr.push(elevator)       
+        
+    });
+    console.log(`The original array is: ${$numbers}`)
+    console.log(`The numbers elevated to 2 are: ${numberSqr}`)
+};
+numbPow($numbers)
+console.log("________________________________________________________")
+let myArray = [8, 9, 5, 4, 3, 2,]
+let myNewArray = []
+let elevatingNumbers = (array) => {
+    array.forEach(element => {
+        let sqr = Math.pow(element,2)
+        myNewArray.push(sqr)
+    });
+    console.log(`The new array with elements to sqr is: ${myNewArray}`)
+};
+elevatingNumbers(myArray)
+console.log("___________________________________________________________________")
+let $myArray = [50, 8, 2, 2, 6, 7, 9]
+let $myNewArray = []
+let sqr = 0
+let elevatingNumbers2 = (array) => {
+    for (const element of array) {
+        sqr = Math.pow(element, 2)
+        $myNewArray.push(sqr)
+    }
+    console.log(`The new array with elements to sqr is: ${$myNewArray}`)
+};
+elevatingNumbers2($myArray)
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-// 9. Crea una función que reciba una cadena de texto y devuelva la misma cadena con las palabras en orden inverso
+console.log(" 9. Crea una función que reciba una cadena de texto y devuelva la misma cadena con las palabras en orden inverso")
+let $string = "please, invert this word"
+let letsInvert = (string) => {
+    console.log(string.split("").reverse().join(""))
+}
+letsInvert($string)
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-// 10. Crea una función que calcule el factorial de un número dado
+console.log("10. Crea una función que calcule el factorial de un número dado") 
+let num = 8
+function factoriza (num){
+    if(num < 0){
+        console.log(-1)
+    }else if(num == 0){
+        console.log(1)
+    }else{
+        console.log((num * factoriza(num - 1)))
+    }
+};
+factoriza(num)
