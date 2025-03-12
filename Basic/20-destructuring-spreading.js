@@ -3,119 +3,117 @@ Clase 35 - Desestructuración y propagación
 Vídeo: https://youtu.be/1glVfFxj8a4?t=15747
 */
 
-let myArray = [1, 2, 3, 4]
 
-let person = {
-    name: "Brais",
-    age: 37,
-    alias: "MoureDev"
+let array = ["daniel", "Lina", "Bella"]
+let gliderBrands = ["Ozone", "Advanced", "Swing"]
+let car = {
+    brand: "Gmc",
+    model: "Hammer",
+    color: "Blue"
 }
+let myValue = array[1]
+console.log(`Mi novia es ${myValue}`)
 
-let myValue = myArray[1]
-console.log(myValue)
+let myCar = car.model
+console.log(`Mi carro es un ${myCar}`)
 
-let myName = person.name
-console.log(myName)
 
 // Desestructuración
-
 // Sintaxis arrays
+let [myName0, myName1, myName2] = array
+console.log(myName0)
+console.log(myName2)
+console.log(myName1)
 
-let [myValue0, myValue1, myValue2, myValue3, myValue4] = myArray
-console.log(myValue0)
-console.log(myValue1)
-console.log(myValue2)
-console.log(myValue3)
-console.log(myValue4)
+let [glider1, glider2, glider3] = gliderBrands
+console.log(glider1)
+console.log(glider2)
+console.log(glider3)
 
 // Sintaxis arrays con valores predeterminados
-
-let [myValue5 = 0, myValue6 = 0, myValue7 = 0, myValue8 = 0, myValue9 = 0] = myArray
-console.log(myValue5)
-console.log(myValue6)
-console.log(myValue7)
-console.log(myValue8)
-console.log(myValue9)
-
+let [myName3 = 0, myName4= 0,myName5 = 0, myName6 = 0, myName7 = 0, myName8 =0] = array
+console.log(myName8)
+console.log("__________________________________-")
 // Ignorar elementos array
-
-let [myValue10, , , myValue13] = myArray
-console.log(myValue10)
-console.log(myValue13)
-
+let [myName9, , myName11] = array
+console.log(myName9)
+console.log(myName11)
+let [ ,glider4, glider5] = gliderBrands
+console.log(glider5)
+console.log(glider4)
+console.log("________________________________________")
 // Sintaxis objects
-
-let { name, age, alias } = person
-console.log(name)
-console.log(age)
-console.log(alias)
-
+let {brand, model, color} = car
+console.log(brand)
+console.log(color)
+console.log(model)
 // Sintaxis objects con valores predeterminados
+let {brand2, color2, model2, year = 2020} = array
+console.log(brand2)// No existe
+console.log(color2)// No existe
+console.log(model2)// No existe
+console.log(year)
 
-let { name2, age2, alias2, email = "email@email.com" } = person
-console.log(name2) // No existe
-console.log(age2)  // No existe
-console.log(alias2)  // No existe
-console.log(email)
 
 // Sintaxis objects con nuevos nombres de variables
-
-let { alias: alias3, name: name3, age: age3 } = person
-console.log(name3)
-console.log(age3)
-console.log(alias3)
+let {brand: brand3, color: color3, model: model3, year: year3} = car
+console.log(brand3)
+console.log(color3)
+console.log(model3)
+console.log(year)
 
 // Objects anidados
-
-let person3 = {
-    name: "Brais",
-    age: 37,
-    alias: "MoureDev",
-    walk: function () {
-        console.log("La persona camina.")
-    },
+let person = {
+    name: "Lina",
+    LastName: "Castro",
+    Gender: "Male",
     job: {
-        name: "Programador",
-        exp: 15,
-        work: function () {
-            console.log(`La persona de ${this.age} años de experiencia trabaja.`)
+        Profession: "Manager",
+        Exp: 13,
+        work: function(){
+            console.log(`${person.name} has ${this.Exp} years experience working as a ${this.Profession}`)
         }
     }
+};
+for (let key in person) {
+    console.log(key + ": " + person[key])
+            
 }
-
-let { name: name4, job: { name: jobName } } = person3
-
+person.job.work()
+let {name: name4, job: {Profession: jobName}} = person
 console.log(name4)
 console.log(jobName)
+jobName = "Software Developer"
+console.log(jobName)
+console.log(person)
+
+let pilot = {
+    name: "Daniel",
+    exp: 13,
+    glider: "Swift 5",
+    brand: "Ozone"
+}
+let {name: newName, exp: newExp, glider: newGlider} = pilot
+newName = "Cuchei"
+newGlider = "Advanced"
+console.log(`the pilot ${newName} flies ${newGlider}`)
+console.log(`the pilot ${pilot.name} flies ${pilot.glider} of ${pilot.brand}`)
+
+
 
 // Propagación (...)
-
 // Sintaxis arrays
 
-let myArray2 = [...myArray, 5, 6]
-
-console.log(myArray2)
-
+let gliderBrands3 = [...gliderBrands, "Gin", "Sky Paragliders"]
+console.log(gliderBrands3)
+console.log("_______________________________")
 // Copia de arrays
-
-let myArray3 = [...myArray]
-
-console.log(myArray3)
-
+let gliderBrands2 = [...gliderBrands] //asi se copia un array
+console.log(gliderBrands2)
 // Combinación de arrays
-
-let myArray4 = [...myArray, ...myArray2, ...myArray3]
-
-console.log(myArray4)
-
+let gliderBrands4 = [...gliderBrands, ...gliderBrands3]
+console.log(gliderBrands4)
 // Sintaxis objects
-
-let person4 = { ...person, email: "braismoure@mouredev.com" }
-
-console.log(person4)
-
+let person2 = {...person, ...car, year: 2020}
+    console.log(person2)
 // Copia de objects
-
-let person5 = { ...person }
-
-console.log(person5)
