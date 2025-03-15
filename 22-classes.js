@@ -89,6 +89,7 @@ class PrivatePerosn {
         this.#bank
         console.log("Function ")
     }
+    
 };
 let subject5 = new PrivatePerosn("Julian", 46, "divino", "Ju345879")
 console.log(subject5) //Se muestran todos los datos menos los privados
