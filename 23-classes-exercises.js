@@ -51,6 +51,7 @@ class otherHause extends hause{
         super(typeOfBuild, size)        
         this.address = address
     }
+    
 }
 let hause3 = new otherHause("Hause", 123, "Car 50")
 console.log(hause3)
@@ -67,20 +68,39 @@ class bankAccount {
     get id(){
         return this.#id 
     }
+   
     set account(newAccount){
         this.#account = newAccount
 
     }
+    get account(){
+        return this.#account
+    }
 };
 let myAccount = new bankAccount(123, 789)
+console.log(myAccount)
+console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+
+console.log("8. Modifica la clase con getters y setters para que use propiedades privadas")
+myAccount.account = 48978
+
+console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+
+console.log("9. Utiliza los get y set y muestra sus valores")
+console.log(myAccount.account)
 console.log(myAccount.id)
 console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
-// 8. Modifica la clase con getters y setters para que use propiedades privadas
-console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+console.log("10. Sobrescribe un método de una clase que utilice herencia ")
+class OtherHause extends hause {
+    description(){
+        console.log("Overwrite metod")
+    }
+    
+    
 
-// 9. Utiliza los get y set y muestra sus valores
-console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+};
+let myOtherHause = new OtherHause("Hause", 34, "cr 34")
 
-// 10. Sobrescribe un método de una clase que utilice herencia 
-console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+myOtherHause.description()
+ console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
