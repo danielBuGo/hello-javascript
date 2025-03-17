@@ -104,3 +104,116 @@ let myOtherHause = new OtherHause("Hause", 34, "cr 34")
 
 myOtherHause.description()
  console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+ console.log("+++ Practicing classes +++")
+ class Person {
+    constructor(name, age, address){
+        this.name = name
+        this. age = age
+        this.address = address
+    }
+ };
+ let myPerson1 = new Person("Luz", "59", "carrera 70")
+ console.log(myPerson1)
+ class DefaultPerson {
+    constructor(name = "Default name", age = 0, address = "With no address"){
+        this.name = name
+        this.age = age
+        this.address = address
+    }
+ };
+ let myPerson2 = new DefaultPerson()
+ console.log(myPerson2)
+ console.log(myPerson2.address)
+ myPerson2.age = 60
+ myPerson2.name = "Nicolas"
+ console.log(myPerson2)
+
+ class Person3 {
+    constructor(name = "Please Introduce name ", age = "Please intruduce age", alias = "with no alias" ){
+        this.name = name
+        this.age = age
+        this.alias = alias
+    }
+    walk(){
+        console.log(`${this.name} is walking`)
+    }
+ };
+ let myPerson3 =  new Person3("Daniel", 36 , "fourlokillo")
+ console.log(myPerson3)
+ myPerson3.walk()
+
+ class PrivateInformation {
+    #password
+    #bankId
+    constructor(user, password, bankId){
+        this.user = user
+        this.#password = password
+        this.#bankId = bankId
+    }
+    pay(){
+        
+        this.#bankId
+    }
+    get password() {
+        return this.#password
+    }
+    set bankId(newId){
+        this.#bankId = newId
+    }
+    get bankId(){
+        return this.#bankId
+    }
+ };
+ let myPerson4 = new PrivateInformation("dabugo", 123, "Bancol123")
+ console.log(myPerson4.password)
+ console.log(myPerson4.bankId)
+ myPerson4.bankId = "Davi1234"
+ console.log(myPerson4.bankId)
+ console.log(myPerson4.password)
+ myPerson4.pay()
+ console.log(myPerson4)
+
+ //Herencia
+ class Animal {
+    constructor(name){
+        this.name = name
+    }
+    sound(){
+        console.log("Make a sound")
+    }
+ };
+
+ class Dog extends Animal{
+    run(){
+        console.log("the dog is running")
+    }
+    sound(){
+        console.log("Guau!")
+    }
+ };
+ let myDog = new Dog("Bella")
+ console.log(myDog)
+ myDog.run()
+ myDog.sound()
+ class Fish extends Animal {
+    constructor(name, size){
+        super(name)
+        this.size = size
+    }
+    swim() {
+        console.log("The fish is swiming")
+
+    }
+   
+ };
+ let myFish = new Fish("Nemo", 12)
+ console.log(myFish)
+ myFish.swim()
+ myFish.sound()
+
+ class MathOperations {
+    static multi (a, b){
+        return a * b
+    }
+ };
+console.log(MathOperations.multi(5, 5))
