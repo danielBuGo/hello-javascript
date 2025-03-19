@@ -83,5 +83,26 @@ try{
     console.log("An personalized erro has occurred: ", error.message)
     error.printNumbers()
 
+};
+
+console.log("----------------------------------------------------------------------")
+function divi(a = 0, b = 0){
+    if(b === 0){
+        throw new SyntaxError("The divisor cannot be 0")
+    } else if(typeof a !== "number" || typeof b !== "number"){
+        throw new TypeError("the values are not numbers: ")
+    }else{
+        return a / b
+    }
+};
+try {
+    console.log(divi(5,0))
+    console.log("✔ function working correctly")
+    
+} catch (error) {
+    console.log("❌An error has occurred: ", error.message)
+    
+} finally{
+    console.log("⭕End of the code")
 }
 

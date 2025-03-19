@@ -60,23 +60,113 @@ try {
 console.log("---------------------------------------------------")
 
 
-// 4. Crea una excepción personalizada
+console.log("4. Crea una excepción personalizada")
+class customError extends Error {
+    constructor(message, a, b){
+        super(message)
+        this.a = a
+        this.b = b
+    }
+    print(){
+        console.log(`${this.a}, ${this.b}`)
+    }
+};
 console.log("---------------------------------------------------")
 
-// 5. Lanza una excepción personalizada
+console.log("5. Lanza una excepción personalizada")
+function divi(a = 0, b = 0){
+    if(b === 0){
+        throw new SyntaxError("The divisor cannot be 0")
+    } else if(typeof a !== "number" || typeof b !== "number"){
+        throw new TypeError("the values are not numbers: ")
+    }else if(a === 0){
+        throw new customError("If the dividendo is 0, the result always will be 0", a, b)
+    }else{
+        return a / b
+    }
+};
 console.log("---------------------------------------------------")
 
-// 6. Lanza varias excepciones según una lógica definida
+console.log("6. Lanza varias excepciones según una lógica definida")
+/** Revisar el punto anterior
+ * function divi(a = 0, b = 0){
+    if(b === 0){
+        throw new SyntaxError("The divisor cannot be 0")
+    } else if(typeof a !== "number" || typeof b !== "number"){
+        throw new TypeError("the values are not numbers: ")
+    }else if(a === 0){
+        throw new customError("If the dividendo is 0, the result always will be 0", a, b)
+    }else{
+        return a / b
+    }
+}; */
 console.log("---------------------------------------------------")
 
-// 7. Captura varias excepciones en un mismo try-catch
+console.log("7. Captura varias excepciones en un mismo try-catch")
+try {
+    console.log(divi(0,2))
+    console.log("✔ function working correctly")
+    
+} catch (error) {
+    if(error instanceof TypeError){
+        console.log("❌An Type error has occurred: ", error.message, error.name)
+    } else if(error instanceof SyntaxError){
+        console.log("❌An Syntax error has occurred: ", error.message, error.name)
+    }else{
+        console.log("❌A commun error has occurred: ", error.message, error.name)
+    }
+    
+    
+} finally{
+    console.log("⭕End of the code")
+}
 console.log("---------------------------------------------------")
-
 // 8. Crea un bucle que intente transformar a float cada valor y capture y muestre los errores
 console.log("---------------------------------------------------")
 
-// 9. Crea una función que verifique si un objeto tiene una propiedad específica y lance una excepción personalizada
+console.log("9. Crea una función que verifique si un objeto tiene una propiedad específica y lance una excepción personalizada")
+let myObject = {
+    name: "Daniel",
+    lastName: "Builes",
+    age: 36
+};
+let isItIn = (object) => {
+    console.log(object.key(name))
+}
 console.log("---------------------------------------------------")
 
-// 10. Crea una función que realice reintentos en caso de error hasta un máximo de 10
+console.log("10. Crea una función que realice reintentos en caso de error hasta un máximo de 10")
+let password = 2007
+let inputPassword = 0
+
+let maxAttempts  = (inputPassword) => {
+    let attempts = 0
+    do {
+        if(password !== inputPassword){ 
+            if(attempts === 10){
+                throw new Error ("Maximun attempts")
+            }
+            attempts++
+            console.log(`Password invalid. Attempt number ${attempts}`)        
+               
+        }else{
+            console.log("welcome to bancolombia")
+            break        
+        
+        }        
+    } while (attempts < 11);
+};
+try {
+   console.log(maxAttempts(2007)) 
+    
+} catch (error) {
+    console.log("An error has occurred:", error.message)
+    
+}finally{
+    console.log("The end")
+}
+
+
+
 console.log("---------------------------------------------------")
+
