@@ -121,7 +121,32 @@ try {
     console.log("⭕End of the code")
 }
 console.log("---------------------------------------------------")
-// 8. Crea un bucle que intente transformar a float cada valor y capture y muestre los errores
+console.log("8. Crea un bucle que intente transformar a float cada valor y capture y muestre los errores.")
+let isFloat = [2, 3.4, 7.8, 3, "cinco", "ocho"];
+let mistakes = [];
+
+for (const element of isFloat) {
+    try {
+        let parsedValue = parseFloat(element);
+        if (isNaN(parsedValue)) {
+            throw new Error(`No se pudo convertir "${element}" a número.`);
+        }
+        console.log(parsedValue);
+    } catch (error) {
+        mistakes.push(error.message);
+    }
+}
+
+if (mistakes.length > 0) {
+    console.log("Estos son los errores:", mistakes);
+} else {
+    console.log("No se encontraron errores.");
+}
+
+console.assert("The end");
+    
+
+
 console.log("---------------------------------------------------")
 
 console.log("9. Crea una función que verifique si un objeto tiene una propiedad específica y lance una excepción personalizada")
@@ -136,7 +161,7 @@ let isItIn = (object) => {
 console.log("---------------------------------------------------")
 
 console.log("10. Crea una función que realice reintentos en caso de error hasta un máximo de 10")
-let password = 2007
+let password = 2097
 let inputPassword = 0
 
 let maxAttempts  = (inputPassword) => {
